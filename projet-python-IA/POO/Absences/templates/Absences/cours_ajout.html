@@ -1,0 +1,15 @@
+{%extends 'Absences/main.html'%}
+{%block content%}
+<h1> Saisie d'un cours </h1>
+    {% if id == '' %}
+<form method="post" action="/Absences/traitementmaj/{{id}}/">
+        {% else %}
+            <form method="post" action="/Absences/cours_traitement/">
+        {% endif %}
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input type="submit" value="Envoyer les données"\>
+            </form> </form>
+{%endblock%}
+</body>
+</html>
